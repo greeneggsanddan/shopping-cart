@@ -16,6 +16,10 @@ export default function Quantity() {
     setQuantity(parseInt(e.target.value, 10));
   }
 
+  function addToCart(e) {
+
+  }
+
   return (
     <div className="input-container">
       <button type="button" onClick={subtractQuantity}>
@@ -32,7 +36,7 @@ export default function Quantity() {
       <button type="button" onClick={addQuantity}>
         +
       </button>
-      <button type="submit">ADD TO CART</button>
+      <button type="submit" onClick={addToCart}>Add to cart</button>
     </div>
   );
 }

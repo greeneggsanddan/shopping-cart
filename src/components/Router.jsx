@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from '../App';
 import ErrorPage from './ErrorPage';
 import Home from './Home';
-import Filter from './Filter';
+import Shop from './Shop';
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -14,7 +14,7 @@ export default function Router() {
         { index: true, element: <Home /> },
         {
           path: "shop/:set",
-          element: <Filter />,
+          element: <Shop />,
           loader: async ({ params }) => {
             try {
               const response = await fetch(`https://api.scryfall.com/cards/search?order=set&q=set%3A${params.set}`, { mode: 'cors' });

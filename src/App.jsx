@@ -1,8 +1,10 @@
 import './App.css';
 import { Link, Outlet } from 'react-router-dom';
 import 'normalize.css';
+import { useState } from 'react';
 
 function App() {
+  const [total, setTotal] = useState(0);
 
   return (
     <>
@@ -19,10 +21,10 @@ function App() {
             <Link to='shop/ltr'>Lord of the Rings</Link>
           </li>
         </ul>
-        <div>Cart</div>
+        <div>Cart ({total})</div>
       </div>
-      <div className="shops">
-        <Outlet />
+      <div>
+        <Outlet context={[total, setTotal]} />
       </div>
     </>
   );

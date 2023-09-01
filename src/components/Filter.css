@@ -1,7 +1,5 @@
-.container {
-  display: flex;
-}
-
 .sidebar {
+  width: 200px;
+  flex-shrink: 0;
   border-right: 1px solid black;
 }
