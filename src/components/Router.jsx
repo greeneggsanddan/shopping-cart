@@ -3,9 +3,6 @@ import App from '../App';
 import ErrorPage from './ErrorPage';
 import Home from './Home';
 import Filter from './Filter';
-// import Woe from './Woe';
-// import Cmm from './Cmm';
-// import Ltr from './Ltr';
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -17,28 +14,25 @@ export default function Router() {
         { index: true, element: <Home /> },
         {
           path: "shop/:set",
-          element: <Filter />
-          // path: 'shop',
-          // element: <Filter />,
-          // errorElement: <ErrorPage />,
-          // children: [
-          //   {
-          //     path: 'shop/woe',
-          //     element: <Woe />,
-          //   },
-          //   {
-          //     path: 'shop/cmm',
-          //     element: <Cmm />,
-          //   },
-          //   {
-          //     path: 'shop/ltr',
-          //     element: <Ltr />,
-          //   },
-            // {
-            //   path: 'cart',
-            //   element: <Cart />,
-            // },
-          // ],
+          element: <Filter />,
+          loader: async ({ params }) => {
+            try {
+              const response = await fetch(`https://api.scryfall.com/cards/search?order=set&q=set%3A${params.set}`, { mode: 'cors' });
+              let apiData = await response.json();
+              let shopData = apiData.data;
+
+              while (apiData.has_more) {
+                const nextResponse = await fetch(apiData.next_page, { mode: 'cors' });
+                const nextPageData = await nextResponse.json();
+                shopData = shopData.concat(nextPageData.data);
+                apiData = nextPageData;
+              }
+              
+              return shopData;
+            } catch (error) {
+              console.error(error);
+            }
+          },
         },
       ],
     },
