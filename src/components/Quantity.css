@@ -1,7 +1,19 @@
+/* Removes input arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Removes input arrows from Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .input-container {
   display: flex;
 }
 
 .quantity {
-  width: 24px;
+  width: 50px;
 }
