@@ -1,0 +1,7 @@
+.input-container {
+  display: flex;
+}
+
+.quantity {
+  width: 24px;
+}
