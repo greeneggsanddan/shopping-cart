@@ -1,9 +1,5 @@
-export default function Ltr() {
-  return (
-    <ul>
-      <li>Banish from Edoras</li>
-      <li>The Battle of Bywater</li>
-      <li>Bill the Pony</li>
-    </ul>
-  )
+export default function Ltr({ shopData }) {
+  const cards = shopData.map((card) => <li key={card.id}>{card.name}</li>);
+
+  return <ul>{cards}</ul>;
 }

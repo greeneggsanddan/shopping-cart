@@ -1,9 +1,5 @@
-export default function Woe() {
-  return (
-    <ul>
-      <li>Archon of the Wild Rose</li>
-      <li>Archon&#39;s Glory</li>
-      <li>Armory Mice</li>
-    </ul>
-  );
+export default function Woe({ shopData }) {
+  const cards = shopData.map((card) => <li key={card.id}>{card.name}</li>);
+
+  return <ul>{cards}</ul>;
 }

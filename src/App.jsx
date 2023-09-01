@@ -19,7 +19,7 @@ function App() {
         while (apiData.has_more) {
           const nextResponse = await fetch(apiData.next_page, { mode: 'cors' });
           const nextPageData = await nextResponse.json();
-          shopData = shopData.concat(nextPageData);
+          shopData = shopData.concat(nextPageData.data);
           apiData = nextPageData;
         }
 
@@ -44,7 +44,7 @@ function App() {
             mode: 'cors',
           });
           const nextPageData = await nextResponse.json();
-          shopData = shopData.concat(nextPageData);
+          shopData = shopData.concat(nextPageData.data);
           apiData = nextPageData;
         }
 
@@ -69,7 +69,7 @@ function App() {
             mode: 'cors',
           });
           const nextPageData = await nextResponse.json();
-          shopData = shopData.concat(nextPageData);
+          shopData = shopData.concat(nextPageData.data);
           apiData = nextPageData;
         }
 
@@ -85,22 +85,22 @@ function App() {
   return (
     <>
       <div className="header">
-        <div>Logo</div>
+        <Link to='/'>Logo</Link>
         <ul className="sets">
           <li>
-            <Link to={'shop/woe'}>Wilds of Eldraine</Link>
+            <Link to='shop/woe'>Wilds of Eldraine</Link>
           </li>
           <li>
-            <Link to={'shop/cmm'}>Commander Masters</Link>
+            <Link to='shop/cmm'>Commander Masters</Link>
           </li>
           <li>
-            <Link to={'shop/ltr'}>Lord of the Rings</Link>
+            <Link to='shop/ltr'>Lord of the Rings</Link>
           </li>
         </ul>
         <div>Cart</div>
       </div>
       <div className="shops">
-        <Outlet />
+        <Outlet context={[shop_1, shop_2, shop_3]} />
       </div>
     </>
   );

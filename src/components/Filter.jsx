@@ -1,25 +1,24 @@
-import { useParams } from 'react-router-dom';
+import { useOutletContext, useParams } from 'react-router-dom';
 import DefaultPage from './DefaultPage';
-import Woe from './Woe';
-import Cmm from './Cmm';
-import Ltr from './Ltr';
+import Shop from './Shop';
 import './Filter.css';
 
 export default function Filter() {
   const { set } = useParams();
+  const [shop_1, shop_2, shop_3] = useOutletContext();
 
   return (
     <div className="container">
       <div className="sidebar">Search here</div>
       <div className="cards">
         {set === 'woe' ? (
-          <Woe />
+          <Shop shopData={shop_1} />
         ) : set === 'cmm' ? (
-          <Cmm />
+          <Shop shopData={shop_2} />
         ) : set === 'ltr' ? (
-          <Ltr />
+          <Shop shopData={shop_3} />
         ) : (
-          <DefaultPage />
+          <DefaultPage /> // This doesn't work atm
         )}
       </div>
     </div>
