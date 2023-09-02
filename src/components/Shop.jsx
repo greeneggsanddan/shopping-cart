@@ -4,7 +4,7 @@ import Filter from './Filter';
 import { useOutletContext } from 'react-router-dom';
 
 export default function Shop() {
-  const [total, setTotal] = useOutletContext();
+  const [total, setTotal, cart, setCart] = useOutletContext();
 
   return (
     <div className="shop-container">
@@ -12,6 +12,8 @@ export default function Shop() {
       <Cards
         total={total}
         setTotal={setTotal}
+        cart={cart}
+        setCart={setCart}
       />
     </div>
   );

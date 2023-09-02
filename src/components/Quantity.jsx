@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Quantity.css';
 
-export default function Quantity() {
+export default function Quantity({ card, total, setTotal, cart, setCart}) {
   const [quantity, setQuantity] = useState(1);
 
   function subtractQuantity() {
@@ -16,9 +16,34 @@ export default function Quantity() {
     setQuantity(parseInt(e.target.value, 10));
   }
 
-  function addToCart(e) {
+  function addToCart(card) {
+    setTotal(total + quantity);
 
+    // Checks if the card is already in the cart and updates the quantity
+    if (cart.some(cardInCart => cardInCart.id === card.id)) {
+      const newCart = cart.map(cardInCart => {
+        if (cardInCart.id === card.id) {
+          return {
+            ...cardInCart,
+            quantity: cardInCart.quantity + quantity,
+          };
+        } else {
+          return cardInCart;
+        }
+      })
+      setCart(newCart);
+    } else {
+      // Creates a new cart that includes the card and the quantity added
+      setCart([
+        ...cart,
+        { ...card, quantity: quantity }
+      ]);
+    }
+
+    setQuantity(1);
   }
+
+
 
   return (
     <div className="input-container">
@@ -36,7 +61,7 @@ export default function Quantity() {
       <button type="button" onClick={addQuantity}>
         +
       </button>
-      <button type="submit" onClick={addToCart}>Add to cart</button>
+      <button type="submit" onClick={() => addToCart(card)}>Add to cart</button>
     </div>
   );
 }

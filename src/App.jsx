@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 function App() {
   const [total, setTotal] = useState(0);
+  const [cart, setCart] = useState([]);
 
   return (
     <>
@@ -24,7 +25,7 @@ function App() {
         <div>Cart ({total})</div>
       </div>
       <div>
-        <Outlet context={[total, setTotal]} />
+        <Outlet context={[total, setTotal, cart, setCart]} />
       </div>
     </>
   );
