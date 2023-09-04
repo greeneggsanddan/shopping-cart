@@ -21,6 +21,13 @@ export default function Filter({ color, setColor, manaValue, setManaValue, type,
     else setRarity(string);
   }
 
+  function resetFilter() {
+    setColor(null);
+    setManaValue(null);
+    setType(null);
+    setRarity(null);
+  }
+
   return (
     <div className="filter">
       <div className="color">
@@ -57,6 +64,7 @@ export default function Filter({ color, setColor, manaValue, setManaValue, type,
         <button onClick={() => filterRarity('uncommon')}>Uncommon</button>
         <button onClick={() => filterRarity('common')}>Common</button>
       </div>
+      <button onClick={resetFilter}>Reset</button>
     </div>
   );
 }
