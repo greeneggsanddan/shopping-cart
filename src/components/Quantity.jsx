@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Quantity.css';
 
-export default function Quantity({ card, total, setTotal, cart, setCart}) {
+export default function Quantity({ card, total, setTotal, cart, setCart }) {
   const [quantity, setQuantity] = useState(1);
 
   function subtractQuantity() {
@@ -20,8 +20,8 @@ export default function Quantity({ card, total, setTotal, cart, setCart}) {
     setTotal(total + quantity);
 
     // Checks if the card is already in the cart and updates the quantity
-    if (cart.some(cardInCart => cardInCart.id === card.id)) {
-      const newCart = cart.map(cardInCart => {
+    if (cart.some((cardInCart) => cardInCart.id === card.id)) {
+      const newCart = cart.map((cardInCart) => {
         if (cardInCart.id === card.id) {
           return {
             ...cardInCart,
@@ -30,20 +30,15 @@ export default function Quantity({ card, total, setTotal, cart, setCart}) {
         } else {
           return cardInCart;
         }
-      })
+      });
       setCart(newCart);
     } else {
       // Creates a new cart that includes the card and the quantity added
-      setCart([
-        ...cart,
-        { ...card, quantity: quantity }
-      ]);
+      setCart([...cart, { ...card, quantity: quantity }]);
     }
 
     setQuantity(1);
   }
-
-
 
   return (
     <div className="input-container">
@@ -61,7 +56,9 @@ export default function Quantity({ card, total, setTotal, cart, setCart}) {
       <button type="button" onClick={addQuantity}>
         +
       </button>
-      <button type="submit" onClick={() => addToCart(card)}>Add to cart</button>
+      <button type="submit" onClick={() => addToCart(card)}>
+        Add to cart
+      </button>
     </div>
   );
 }

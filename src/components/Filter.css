@@ -1,5 +1,9 @@
-.sidebar {
-  width: 200px;
+.filter {
+  width: 240px;
   flex-shrink: 0;
   border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
