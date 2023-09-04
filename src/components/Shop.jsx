@@ -10,6 +10,7 @@ export default function Shop() {
   const [manaValue, setManaValue] = useState(null);
   const [type, setType] = useState(null);
   const [rarity, setRarity] = useState(null);
+  const [query, setQuery] = useState('');
 
   return (
     <div className="shop-container">
@@ -22,6 +23,8 @@ export default function Shop() {
         setType={setType}
         rarity={rarity}
         setRarity={setRarity}
+        query={query}
+        setQuery={setQuery}
         />
       <Cards
         total={total}
@@ -32,6 +35,7 @@ export default function Shop() {
         manaValue={manaValue}
         type={type}
         rarity={rarity}
+        query={query}
       />
     </div>
   );

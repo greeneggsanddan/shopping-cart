@@ -1,6 +1,21 @@
 import './Filter.css';
 
-export default function Filter({ color, setColor, manaValue, setManaValue, type, setType, rarity, setRarity }) {
+export default function Filter({
+  color,
+  setColor,
+  manaValue,
+  setManaValue,
+  type,
+  setType,
+  rarity,
+  setRarity,
+  query,
+  setQuery,
+}) {
+  function handleChange(e) {
+    setQuery(e.target.value);
+  }
+
   function filterColor(string) {
     if (string === color) setColor(null);
     else setColor(string);
@@ -30,6 +45,8 @@ export default function Filter({ color, setColor, manaValue, setManaValue, type,
 
   return (
     <div className="filter">
+      <label htmlFor="search-bar" hidden>Search Bar</label>
+      <input id="search-bar" value={query} onChange={handleChange} />
       <div className="color">
         <button onClick={() => filterColor('W')}>White</button>
         <button onClick={() => filterColor('U')}>Blue</button>

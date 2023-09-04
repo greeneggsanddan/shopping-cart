@@ -11,10 +11,18 @@ export default function Cards({
   manaValue,
   type,
   rarity,
+  query,
 }) {
-  let shopData = useLoaderData();
+  const shopData = useLoaderData();
 
-  const cards = shopData.map((card) => {
+  function filterCards(data, query) {
+    query = query.toLowerCase();
+    return data.filter((card) =>
+      card.name.split(' ').some((word) => word.toLowerCase().startsWith(query))
+    );
+  }
+
+  const cards = filterCards(shopData, query).map((card) => {
     const cardColors = card.colors.length === 0 ? ['C'] : card.colors;
     const cmc = card.cmc >= 7 ? 7 : card.cmc;
     const cardTypes = card.type_line.split(' ');
