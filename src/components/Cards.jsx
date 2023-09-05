@@ -3,8 +3,6 @@ import Quantity from './Quantity';
 import { useLoaderData } from 'react-router-dom';
 
 export default function Cards({
-  total,
-  setTotal,
   cart,
   setCart,
   color,
@@ -41,8 +39,6 @@ export default function Cards({
         <img className="card" src={card.image_uris.normal} alt={card.name} />
         <Quantity
           card={card}
-          total={total}
-          setTotal={setTotal}
           cart={cart}
           setCart={setCart}
         />

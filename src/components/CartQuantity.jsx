@@ -1,4 +1,4 @@
-export default function CartQuantity({ cart, setCart, total, setTotal, item }) {
+export default function CartQuantity({ cart, setCart, item }) {
   function subtractItem() {
     const newQuantity = item.quantity - 1;
     let newCart;
@@ -18,7 +18,6 @@ export default function CartQuantity({ cart, setCart, total, setTotal, item }) {
       });
     }
 
-    setTotal(total - 1);
     setCart(newCart);
   }
 
@@ -37,7 +36,6 @@ export default function CartQuantity({ cart, setCart, total, setTotal, item }) {
       return i;
     });
 
-    setTotal(total + 1);
     setCart(newCart);
   }
 

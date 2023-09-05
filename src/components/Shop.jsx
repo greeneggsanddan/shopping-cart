@@ -5,7 +5,7 @@ import { useOutletContext } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Shop() {
-  const [total, setTotal, cart, setCart] = useOutletContext();
+  const [cart, setCart] = useOutletContext();
   const [color, setColor] = useState(null);
   const [manaValue, setManaValue] = useState(null);
   const [type, setType] = useState(null);
@@ -27,8 +27,6 @@ export default function Shop() {
         setQuery={setQuery}
         />
       <Cards
-        total={total}
-        setTotal={setTotal}
         cart={cart}
         setCart={setCart}
         color={color}

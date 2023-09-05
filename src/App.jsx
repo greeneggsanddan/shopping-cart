@@ -7,12 +7,11 @@ import cmmSymbol from './assets/cmm.svg';
 import ltrSymbol from './assets/ltr.svg';
 
 export default function App() {
-  const [total, setTotal] = useState(0);
   const [cart, setCart] = useState([]);
 
-  function displayTotal() {
+  // function displayTotal() {
 
-  }
+  // }
 
   return (
     <>
@@ -53,7 +52,7 @@ export default function App() {
         </Link>
       </div>
       <div>
-        <Outlet context={[total, setTotal, cart, setCart]} />
+        <Outlet context={[cart, setCart]} />
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import CartQuantity from './CartQuantity';
 import './Cart.css'
 
 export default function Cart() {
-  const [total, setTotal, cart, setCart] = useOutletContext();
+  const [cart, setCart] = useOutletContext();
 
   const items = cart.map((item) => (
     <div key={item.id} className="item">
@@ -14,8 +14,6 @@ export default function Cart() {
       <CartQuantity
         cart={cart}
         setCart={setCart}
-        total={total}
-        setTotal={setTotal}
         item={item}
       />
       <p>{item.prices.usd * item.quantity}</p>
