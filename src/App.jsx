@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import 'normalize.css';
 import { useState } from 'react';
 
-function App() {
+export default function App() {
   const [total, setTotal] = useState(0);
   const [cart, setCart] = useState([]);
 
@@ -22,7 +22,7 @@ function App() {
             <Link to='shop/ltr'>Lord of the Rings</Link>
           </li>
         </ul>
-        <div>Cart ({total})</div>
+        <Link to='cart'>Cart ({total})</Link>
       </div>
       <div>
         <Outlet context={[total, setTotal, cart, setCart]} />
@@ -30,5 +30,3 @@ function App() {
     </>
   );
 }
-
-export default App;

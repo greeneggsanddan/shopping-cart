@@ -3,6 +3,7 @@ import App from '../App';
 import ErrorPage from './ErrorPage';
 import Home from './Home';
 import Shop from './Shop';
+import Cart from './Cart';
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -33,6 +34,10 @@ export default function Router() {
               console.error(error);
             }
           },
+        },
+        {
+          path: "cart",
+          element: <Cart />,
         },
       ],
     },
