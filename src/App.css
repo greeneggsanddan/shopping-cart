@@ -1,10 +1,45 @@
+html {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin: auto 100px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .header {
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .sets {
   display: flex;
-  gap: 24px;
+  gap: 40px;
+  font-size: 1.125rem;
+}
+
+.set-container {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.symbol {
+  height: 20px;
 }
