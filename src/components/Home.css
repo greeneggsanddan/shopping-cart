@@ -1,0 +1,42 @@
+.home {
+  margin-top: 60px;
+}
+
+.hero {
+  background-image: url('../assets/splash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: calc(100vh - 60px);
+}
+
+.overlay {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.shop-here {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  background-color: #3f48c5;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 32px;
+}
+
+.shop-here:hover {
+  background-color: #2a3081;
+}
