@@ -1,4 +1,5 @@
 .shop-container {
   display: flex;
-  margin-top: 60px;
+  flex-direction: column;
+  margin-top: 85px;
 }

@@ -5,7 +5,7 @@
 html {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  overflow-y: scroll
+  overflow-y: scroll;
 }
 
 button {
@@ -32,6 +32,7 @@ ul {
   background-color: white;
   width: 100%;
   height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .logo {
@@ -54,14 +55,14 @@ ul {
   align-items: center;
   gap: 10px;
   padding: 8px 0;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 .set-container:hover {
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
 }
 
-.symbol {
+.set-symbol {
   height: 20px;
 }
 

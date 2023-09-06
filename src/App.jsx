@@ -20,19 +20,19 @@ export default function App() {
         <ul className="sets">
           <li>
             <Link className="set-container" to="shop/woe">
-              <img className="symbol" src={woeSymbol} alt="" />
+              <img className="set-symbol" src={woeSymbol} alt="" />
               Wilds of Eldraine
             </Link>
           </li>
           <li>
             <Link className="set-container" to="shop/cmm">
-              <img className="symbol" src={cmmSymbol} alt="" />
+              <img className="set-symbol" src={cmmSymbol} alt="" />
               Commander Masters
             </Link>
           </li>
           <li>
             <Link className="set-container" to="shop/ltr">
-              <img className="symbol" src={ltrSymbol} alt="" />
+              <img className="set-symbol" src={ltrSymbol} alt="" />
               Lord of the Rings
             </Link>
           </li>
