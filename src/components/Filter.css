@@ -1,5 +1,10 @@
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .filter {
-  width: 240px;
+  width: 360px;
   flex-shrink: 0;
   border-right: 1px solid black;
   display: flex;
@@ -7,3 +12,32 @@
   gap: 20px;
 }
 
+.mana-symbol {
+  height: 36px;
+}
+
+.mana-values {
+
+}
+
+.rarity {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.mythic {
+  background-color: #F29224;
+}
+
+.rare {
+  background-color: #E7CF91;
+}
+
+.uncommon {
+  background-color: #B8DCE8;
+}
+
+.common {
+  background-color: black;
+}
