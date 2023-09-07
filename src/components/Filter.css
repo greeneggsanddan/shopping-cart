@@ -11,7 +11,7 @@ button {
   gap: 24px;
   display: flex;
   flex-direction: column;
-  margin: auto 160px;
+  margin: auto var(--side-margin);
 }
 
 .search-container {
@@ -29,20 +29,20 @@ button {
 }
 
 #search-bar:focus {
-  outline: 1px solid #e5e5e5;
+  outline: none;
 }
 
 .reset {
   font-size: 1.25rem;
   font-weight: 600;
-  background-color: #3f48c5;
+  background-color: #eb4a2a;
   color: white;
   border-radius: 36px;
   padding: 0px 24px;
 }
 
 .reset:hover {
-  background-color: #2a3081;
+  background-color: #c43a1f;
 }
 
 .filters {

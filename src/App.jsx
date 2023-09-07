@@ -15,7 +15,7 @@ export default function App() {
     <>
       <div className="header">
         <Link className="logo" to="/">
-          CARDCASE
+          CARDSTORE
         </Link>
         <ul className="sets">
           <li>

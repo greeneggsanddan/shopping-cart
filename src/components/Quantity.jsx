@@ -13,7 +13,11 @@ export default function Quantity({ card, cart, setCart }) {
   }
 
   function handleInput(e) {
-    setQuantity(parseInt(e.target.value, 10));
+    const value = e.target.value;
+
+    // Prevents negative numbers and NaN inputs
+    if (!value || value < 1) setQuantity(1);
+    else setQuantity(parseInt(value, 10));
   }
 
   function addToCart(card) {
@@ -39,24 +43,40 @@ export default function Quantity({ card, cart, setCart }) {
   }
 
   return (
-    <div className="input-container">
-      <button type="button" onClick={subtractQuantity}>
-        -
-      </button>
-      <input
-        className="quantity"
-        type="number"
-        min="1"
-        max="99"
-        value={quantity}
-        onChange={handleInput}
-      />
-      <button type="button" onClick={addQuantity}>
-        +
-      </button>
-      <button type="submit" onClick={() => addToCart(card)}>
-        Add to cart
-      </button>
-    </div>
+    <form className="quantity-container">
+      <div className="price">${(card.prices.usd * quantity).toFixed(2)}</div>
+      <div className="quantity-row">
+        <div className="quantity-adjuster">
+          <button
+            className="plus-minus"
+            type="button"
+            onClick={subtractQuantity}
+          >
+            -
+          </button>
+          <input
+            className="quantity"
+            type="number"
+            min="1"
+            max="99"
+            value={quantity}
+            onChange={handleInput}
+          />
+          <button className="plus-minus" type="button" onClick={addQuantity}>
+            +
+          </button>
+        </div>
+        <button
+          className="add"
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            addToCart(card);
+          }}
+        >
+          ADD TO CART
+        </button>
+      </div>
+    </form>
   );
 }

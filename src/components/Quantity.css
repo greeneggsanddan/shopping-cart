@@ -6,14 +6,60 @@ input::-webkit-inner-spin-button {
 }
 
 /* Removes input arrows from Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
-.input-container {
+.quantity-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-weight: 500;
+  font-size: 1.25rem;
+  align-self: flex-end;
+}
+
+.quantity-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantity-adjuster {
+  border: 3px solid black;
   display: flex;
 }
 
 .quantity {
-  width: 50px;
+  width: 24px;
+  border: none;
+  padding: 4px 7px;
+}
+
+.quantity:focus {
+  outline: none;
+}
+
+.plus-minus {
+  font-weight: 700;
+  padding: 4px 14px;
+  background-color: rgb(212, 212, 212);
+}
+
+.plus-minus:hover {
+  background-color: rgb(163, 163, 163);
+}
+
+.add {
+  border: 3px solid black;
+  padding: 8px 16px;
+  font-weight: 700;
+}
+
+.add:hover {
+  background-color: black;
+  color: white;
 }
