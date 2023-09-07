@@ -15,12 +15,19 @@ export default function Quantity({ card, cart, setCart }) {
   function handleInput(e) {
     const value = e.target.value;
 
-    // Prevents negative numbers and NaN inputs
-    if (!value || value < 1) setQuantity(1);
-    else setQuantity(parseInt(value, 10));
+    // Prevents negative numbers
+    if (!value) {
+      setQuantity('');
+    } else if (value < 1) {
+      setQuantity(1);
+    } else {
+      setQuantity(parseInt(value, 10));
+    }
   }
 
   function addToCart(card) {
+    if (quantity === '') return;
+    
     // Checks if the card is already in the cart and updates the quantity
     if (cart.some((cardInCart) => cardInCart.id === card.id)) {
       const newCart = cart.map((cardInCart) => {
@@ -44,39 +51,33 @@ export default function Quantity({ card, cart, setCart }) {
 
   return (
     <form className="quantity-container">
-      <div className="price">${(card.prices.usd * quantity).toFixed(2)}</div>
-      <div className="quantity-row">
-        <div className="quantity-adjuster">
-          <button
-            className="plus-minus"
-            type="button"
-            onClick={subtractQuantity}
-          >
-            -
-          </button>
-          <input
-            className="quantity"
-            type="number"
-            min="1"
-            max="99"
-            value={quantity}
-            onChange={handleInput}
-          />
-          <button className="plus-minus" type="button" onClick={addQuantity}>
-            +
-          </button>
-        </div>
-        <button
-          className="add"
-          type="submit"
-          onClick={(e) => {
-            e.preventDefault();
-            addToCart(card);
-          }}
-        >
-          ADD TO CART
+      <div className="price">${card.prices.usd}</div>
+      <div className="quantity-adjuster">
+        <button className="plus-minus" type="button" onClick={subtractQuantity}>
+          -
+        </button>
+        <input
+          className="quantity"
+          type="number"
+          min="1"
+          max="99"
+          value={quantity}
+          onChange={handleInput}
+        />
+        <button className="plus-minus" type="button" onClick={addQuantity}>
+          +
         </button>
       </div>
+      <button
+        className="add"
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+          addToCart(card);
+        }}
+      >
+        ADD TO CART
+      </button>
     </form>
   );
 }

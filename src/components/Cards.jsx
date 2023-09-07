@@ -50,7 +50,7 @@ export default function Cards({
   return (
     <>
       <div className="cards">{cards}</div>
-      {noCards ? <div className="empty">Nothing to see here!</div> : null}
+      {noCards ? <div className="no-cards">Nothing to see here!</div> : null}
     </>
   );
 }

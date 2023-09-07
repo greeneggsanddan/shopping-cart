@@ -71,7 +71,7 @@ export default function Filter({
         <label htmlFor="search-bar" hidden>
           Search Bar
         </label>
-        <input id="search-bar" value={query} onChange={handleChange} autoFocus/>
+        <input id="search-bar" value={query} onChange={handleChange} />
         <button className="reset" onClick={resetFilter}>RESET FILTERS</button>
       </div>
       <div className="filters">

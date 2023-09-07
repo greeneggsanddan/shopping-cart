@@ -37,7 +37,7 @@ export default function App() {
             </Link>
           </li>
         </ul>
-        <Link className='cart-container' to="cart">
+        <Link className='bag-container' to="cart">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32"

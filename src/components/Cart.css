@@ -1,3 +1,7 @@
+.cart-container {
+  margin: 85px var(--side-margin);
+}
+
 .cart {
   display: flex;
   flex-direction: column;

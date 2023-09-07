@@ -15,17 +15,12 @@ input[type='number'] {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 12px;
+  align-items: center;
 }
 
 .price {
   font-weight: 500;
   font-size: 1.25rem;
-  align-self: flex-end;
-}
-
-.quantity-row {
-  display: flex;
-  justify-content: space-between;
 }
 
 .quantity-adjuster {
@@ -34,9 +29,10 @@ input[type='number'] {
 }
 
 .quantity {
-  width: 24px;
+  width: 26px;
   border: none;
   padding: 4px 7px;
+  font-size: 1rem;
 }
 
 .quantity:focus {
@@ -45,8 +41,9 @@ input[type='number'] {
 
 .plus-minus {
   font-weight: 700;
-  padding: 4px 14px;
+  padding: 6px 17px;
   background-color: rgb(212, 212, 212);
+  font-size: 1.25rem;
 }
 
 .plus-minus:hover {
@@ -55,7 +52,7 @@ input[type='number'] {
 
 .add {
   border: 3px solid black;
-  padding: 8px 16px;
+  padding: 8px 12px;
   font-weight: 700;
 }
 

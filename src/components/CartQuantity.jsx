@@ -40,14 +40,14 @@ export default function CartQuantity({ cart, setCart, item }) {
   }
 
   return (
-    <>
-      <button type="button" onClick={subtractItem}>
+    <div className="quantity-adjuster">
+      <button className='plus-minus' type="button" onClick={subtractItem}>
         -
       </button>
-      <p>{item.quantity}</p>
-      <button type="button" onClick={addItem}>
+      <p className="quantity">{item.quantity}</p>
+      <button className="plus-minus" type="button" onClick={addItem}>
         +
       </button>
-    </>
+    </div>
   );
 }

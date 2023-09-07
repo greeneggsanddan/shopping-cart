@@ -1,5 +1,6 @@
 :root {
   --side-margin: 160px;
+  --mythic-orange: #eb4a2a
 }
 
 html {
@@ -10,6 +11,11 @@ html {
 
 button {
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding-block: 0;
+  padding-inline: 0;
+  padding: 0;
 }
 
 a {
@@ -56,7 +62,7 @@ ul {
   gap: 10px;
   padding: 8px 0;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
-  transition: border-bottom .25s ease-in-out;
+  transition: border-bottom 0.25s ease-in-out;
 }
 
 .set-container:hover {
@@ -67,7 +73,7 @@ ul {
   height: 20px;
 }
 
-.cart-container {
+.bag-container {
   position: relative;
   display: flex;
   align-items: center;
