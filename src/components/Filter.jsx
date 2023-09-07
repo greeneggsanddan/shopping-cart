@@ -72,7 +72,7 @@ export default function Filter({
           Search Bar
         </label>
         <input id="search-bar" value={query} onChange={handleChange} autoFocus/>
-        <button className="reset" onClick={resetFilter}>RESET</button>
+        <button className="reset" onClick={resetFilter}>RESET FILTERS</button>
       </div>
       <div className="filters">
         <div className="symbol-container">
