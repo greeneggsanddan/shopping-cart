@@ -24,7 +24,7 @@ export default function CartQuantity({ cart, setCart, item }) {
   function addItem() {
     const newQuantity = item.quantity + 1;
 
-    if (newQuantity === 99) return;
+    if (newQuantity === 100) return;
 
     const newCart = cart.map((i) => {
       if (i.id === item.id) {
