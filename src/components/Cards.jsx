@@ -20,7 +20,9 @@ export default function Cards({
     );
   }
 
-  const cards = filterCards(shopData, query).map((card) => {
+  const filteredCards = filterCards(shopData, query);
+
+  const cards = filteredCards.map((card) => {
     const cardColors = card.colors.length === 0 ? ['C'] : card.colors;
     const cmc = card.cmc >= 7 ? 7 : card.cmc;
     const cardTypes = card.type_line.split(' ');
@@ -37,14 +39,18 @@ export default function Cards({
     return (
       <div key={card.id} className="card-container">
         <img className="card" src={card.image_uris.normal} alt={card.name} />
-        <Quantity
-          card={card}
-          cart={cart}
-          setCart={setCart}
-        />
+        <Quantity card={card} cart={cart} setCart={setCart} />
       </div>
     );
   });
 
-  return <div className="cards">{cards}</div>;
+  // Checks if all cards are filtered out
+  const noCards = cards.every((card) => card === null);
+
+  return (
+    <>
+      <div className="cards">{cards}</div>
+      {noCards ? <div className="empty">Nothing to see here!</div> : null}
+    </>
+  );
 }
