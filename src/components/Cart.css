@@ -17,14 +17,16 @@ th {
 
 td {
   vertical-align: top;
-  padding: 16px 36px;
+  padding: 16px 24px;
   border-top: 1px solid #e5e5e5;
   font-size: 1.125rem;
 }
 
 td:nth-child(3),
-td:nth-child(5) {
+td:nth-child(5),
+td:nth-child(6) {
   text-align: center;
+  padding-top: 26px;
 }
 
 .item-col {
@@ -41,7 +43,7 @@ td:nth-child(5) {
 }
 
 .quantity-col {
-  width: 240px;
+  width: auto;
 }
 
 .cart-card {
@@ -64,6 +66,14 @@ td:nth-child(5) {
   font-size: 1.25rem;
 }
 
+tr:last-child td:nth-child(5) {
+  padding-top: 16px;
+}
+
+.remove-button:hover {
+  fill: rgb(128, 128, 128);
+}
+
 .checkout {
   background-color: var(--mythic-orange);
   color: white;
@@ -76,4 +86,11 @@ td:nth-child(5) {
 
 .checkout:hover {
   background-color: #c43a1f;
+}
+
+.empty {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 12px;
 }

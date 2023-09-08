@@ -1,3 +1,5 @@
+import './CartQuantity.css'
+
 export default function CartQuantity({ cart, setCart, item }) {
   function subtractItem() {
     const newQuantity = item.quantity - 1;
@@ -40,12 +42,12 @@ export default function CartQuantity({ cart, setCart, item }) {
   }
 
   return (
-    <div className="quantity-adjuster">
-      <button className='plus-minus' type="button" onClick={subtractItem}>
+    <div className="cart-quantity-adjuster">
+      <button className='cart-plus-minus' type="button" onClick={subtractItem}>
         -
       </button>
-      <p className="quantity">{item.quantity}</p>
-      <button className="plus-minus" type="button" onClick={addItem}>
+      <div className="cart-quantity">{item.quantity}</div>
+      <button className="cart-plus-minus" type="button" onClick={addItem}>
         +
       </button>
     </div>

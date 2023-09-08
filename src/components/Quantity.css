@@ -29,9 +29,9 @@ input[type='number'] {
 }
 
 .quantity {
-  width: 26px;
+  width: 25px;
   border: none;
-  padding: 4px 7px;
+  padding: 4px 9px;
   font-size: 1rem;
 }
 
@@ -41,7 +41,7 @@ input[type='number'] {
 
 .plus-minus {
   font-weight: 700;
-  padding: 6px 17px;
+  padding: 6px 16px;
   background-color: rgb(212, 212, 212);
   font-size: 1.25rem;
 }

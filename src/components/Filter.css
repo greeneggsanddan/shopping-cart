@@ -31,14 +31,14 @@
   /* color: white; */
   /* border-radius: 36px; */
   background-color: white;
-  color: var(--mythic-orange);
-  border: 4px solid var(--mythic-orange);
+  color: black;
+  border: 4px solid black;
   padding: 0px 12px;
 }
 
 .reset:hover {
   /* background-color: #c43a1f; */
-  background-color: var(--mythic-orange);
+  background-color: black;
   color: white;
 }
 

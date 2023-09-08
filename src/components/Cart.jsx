@@ -35,6 +35,7 @@ export default function Cart() {
             height="20"
             viewBox="0 -960 960 960"
             width="20"
+            className='remove-button'
           >
             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
           </svg>
@@ -70,7 +71,7 @@ export default function Cart() {
               <th>Price</th>
               <th>Quantity</th>
               <th>Total</th>
-              <th>Remove</th>
+              <th></th>
             </tr>
             {items}
             <tr>
@@ -78,7 +79,8 @@ export default function Cart() {
               <td></td>
               <td></td>
               <td className="subtotal-title">Subtotal:</td>
-              <td className="subtotal">${subtotal.toFixed(2)}</td>
+                <td className="subtotal">${subtotal.toFixed(2)}</td>
+                <td></td>
             </tr>
           </table>
           <button className="checkout">PROCEED TO CHECKOUT</button>

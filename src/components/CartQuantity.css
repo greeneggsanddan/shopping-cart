@@ -1,0 +1,23 @@
+.cart-quantity-adjuster {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-quantity {
+  width: 22px;
+  border: none;
+  padding: 9px;
+  font-size: 1rem;
+}
+
+.cart-plus-minus {
+  font-weight: 600;
+  padding: 6px 13px;
+  background-color: rgb(212, 212, 212);
+  font-size: 1.25rem;
+}
+
+.cart-plus-minus:hover {
+  background-color: rgb(163, 163, 163);
+}

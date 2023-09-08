@@ -9,7 +9,8 @@ export default function Quantity({ card, cart, setCart }) {
   }
 
   function addQuantity() {
-    if (quantity < 99) setQuantity(quantity + 1);
+    if (quantity === '') setQuantity(1);
+    else if (quantity < 99) setQuantity(quantity + 1);
   }
 
   function handleInput(e) {
@@ -27,7 +28,7 @@ export default function Quantity({ card, cart, setCart }) {
 
   function addToCart(card) {
     if (quantity === '') return;
-    
+
     // Checks if the card is already in the cart and updates the quantity
     if (cart.some((cardInCart) => cardInCart.id === card.id)) {
       const newCart = cart.map((cardInCart) => {
