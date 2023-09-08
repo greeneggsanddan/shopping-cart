@@ -20,7 +20,6 @@ import sorcery from '../assets/sorcery.svg';
 import enchantment from '../assets/enchantment.svg';
 import artifact from '../assets/artifact.svg';
 import land from '../assets/land.svg';
-import { symbol } from 'prop-types';
 
 export default function Filter({
   color,
@@ -125,7 +124,7 @@ export default function Filter({
         <label htmlFor="search-bar" hidden>
           Search Bar
         </label>
-        <input id="search-bar" value={query} onChange={handleChange} />
+        <input id="search-bar" value={query} onChange={handleChange} autoComplete='off' autoFocus />
         <button className="reset" onClick={resetFilter}>
           RESET FILTERS
         </button>
