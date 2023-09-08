@@ -27,9 +27,6 @@
 .reset {
   font-size: 1.25rem;
   font-weight: 600;
-  /* background-color: var(--mythic-orange); */
-  /* color: white; */
-  /* border-radius: 36px; */
   background-color: white;
   color: black;
   border: 4px solid black;
@@ -37,7 +34,6 @@
 }
 
 .reset:hover {
-  /* background-color: #c43a1f; */
   background-color: black;
   color: white;
 }
@@ -66,29 +62,29 @@
 
 .colors,
 .mana-values,
-.types,
+.card-types,
 .rarities {
   display: flex;
   gap: 12px;
 }
 
-.types {
+.card-types {
   position: relative;
   top: -5px;
 }
 
 .symbol {
   height: 36px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
 }
 
-.selected {
-  outline: 3px solid rgb(0, 0, 0);
-}
-
-.planeswalker-symbol {
+#Planeswalker.symbol {
   position: relative;
   top: -3px;
   height: 47px;
+  padding-bottom: 1px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
 }
 
 .rarity {
@@ -97,18 +93,30 @@
   border-radius: 50%;
 }
 
-.mythic {
+.rarity-container {
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+}
+
+.selected,
+.symbol:hover,
+#Planeswalker.symbol:hover,
+.rarity-container:hover {
+  border-bottom: 3px solid black;
+  transition: border-bottom .25s ease-in-out;
+}
+
+.mythic.rarity {
   background-color: var(--mythic-orange);
 }
 
-.rare {
+.rare.rarity {
   background-color: #ddc076;
 }
 
-.uncommon {
+.uncommon.rarity {
   background-color: #aed2de;
 }
 
-.common {
+.common.rarity {
   background-color: black;
 }

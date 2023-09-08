@@ -20,6 +20,7 @@ import sorcery from '../assets/sorcery.svg';
 import enchantment from '../assets/enchantment.svg';
 import artifact from '../assets/artifact.svg';
 import land from '../assets/land.svg';
+import { symbol } from 'prop-types';
 
 export default function Filter({
   color,
@@ -38,33 +39,86 @@ export default function Filter({
   }
 
   function filterColor(string) {
-    if (string === color) setColor(null);
-    else setColor(string);
+    const symbols = document.querySelectorAll('.mana-color');
+    const selected = document.getElementById(string);
+
+    symbols.forEach((symbol) => symbol.classList.remove('selected'));
+
+    if (string === color) {
+      setColor(null);
+    } else {
+      selected.classList.add('selected');
+      setColor(string);
+    }
   }
 
   function filterManaValue(number) {
-    if (number === manaValue) setManaValue(null);
-    else setManaValue(number);
+    const symbols = document.querySelectorAll('.mana-cost');
+    const selected = document.getElementById(numberToWords(number));
+
+    symbols.forEach((symbol) => symbol.classList.remove('selected'));
+
+    if (number === manaValue) {
+      setManaValue(null);
+    } else {
+      selected.classList.add('selected');
+      setManaValue(number);
+    }
   }
 
   function filterType(string) {
-    if (string === type) setType(null);
-    else setType(string);
+    const symbols = document.querySelectorAll('.card-type');
+    const selected = document.getElementById(string);
+
+    symbols.forEach((symbol) => symbol.classList.remove('selected'));
+
+    if (string === type) {
+      setType(null);
+    } else {
+      selected.classList.add('selected');
+      setType(string);
+    }
   }
 
   function filterRarity(string) {
-    if (string === rarity) setRarity(null);
-    else setRarity(string);
+    const symbols = document.querySelectorAll('.rarity-container');
+    const selected = document.getElementById(string);
+
+    symbols.forEach((symbol) => symbol.classList.remove('selected'));
+
+    if (string === rarity) {
+      setRarity(null);
+    } else {
+      selected.classList.add('selected');
+      setRarity(string);
+    }
   }
-  
+
   function resetFilter() {
+    const selected = document.querySelectorAll('.selected');
+    selected.forEach((symbol) => symbol.classList.remove('selected'));
+
     setColor(null);
     setManaValue(null);
     setType(null);
     setRarity(null);
     setQuery('');
   }
-  
+
+  function numberToWords(number) {
+    const words = [
+      'zero',
+      'one',
+      'two',
+      'three',
+      'four',
+      'five',
+      'six',
+      'seven',
+    ];
+    return words[number];
+  }
+
   return (
     <div className="filter-container">
       <div className="search-container">
@@ -72,30 +126,58 @@ export default function Filter({
           Search Bar
         </label>
         <input id="search-bar" value={query} onChange={handleChange} />
-        <button className="reset" onClick={resetFilter}>RESET FILTERS</button>
+        <button className="reset" onClick={resetFilter}>
+          RESET FILTERS
+        </button>
       </div>
       <div className="filters">
         <div className="symbol-container">
           COLOR
           <div className="colors">
             <button onClick={() => filterColor('W')}>
-              <img className="symbol" src={white} alt="white mana symbol" />
+              <img
+                id="W"
+                className="mana-color symbol"
+                src={white}
+                alt="white mana symbol"
+              />
             </button>
             <button onClick={() => filterColor('U')}>
-              <img className="symbol" src={blue} alt="blue mana symbol" />
+              <img
+                id="U"
+                className="mana-color symbol"
+                src={blue}
+                alt="blue mana symbol"
+              />
             </button>
             <button onClick={() => filterColor('B')}>
-              <img className="symbol" src={black} alt="black mana symbol" />
+              <img
+                id="B"
+                className="mana-color symbol"
+                src={black}
+                alt="black mana symbol"
+              />
             </button>
             <button onClick={() => filterColor('R')}>
-              <img className="symbol" src={red} alt="red mana symbol" />
+              <img
+                id="R"
+                className="mana-color symbol"
+                src={red}
+                alt="red mana symbol"
+              />
             </button>
             <button onClick={() => filterColor('G')}>
-              <img className="symbol" src={green} alt="green mana symbol" />
+              <img
+                id="G"
+                className="mana-color symbol"
+                src={green}
+                alt="green mana symbol"
+              />
             </button>
             <button onClick={() => filterColor('C')}>
               <img
-                className="symbol"
+                id="C"
+                className="mana-color symbol"
                 src={colorless}
                 alt="colorless mana symbol"
               />
@@ -107,63 +189,130 @@ export default function Filter({
           MANA VALUE
           <div className="mana-values">
             <button onClick={() => filterManaValue(0)}>
-              <img className="symbol" src={zero} alt="zero mana cost" />
+              <img
+                id="zero"
+                className="mana-cost symbol"
+                src={zero}
+                alt="zero mana cost"
+              />
             </button>
             <button onClick={() => filterManaValue(1)}>
-              <img className="symbol" src={one} alt="one mana cost" />
+              <img
+                id="one"
+                className="mana-cost symbol"
+                src={one}
+                alt="one mana cost"
+              />
             </button>
             <button onClick={() => filterManaValue(2)}>
-              <img className="symbol" src={two} alt="two mana cost" />
+              <img
+                id="two"
+                className="mana-cost symbol"
+                src={two}
+                alt="two mana cost"
+              />
             </button>
             <button onClick={() => filterManaValue(3)}>
-              <img className="symbol" src={three} alt="three mana cost" />
+              <img
+                id="three"
+                className="mana-cost symbol"
+                src={three}
+                alt="three mana cost"
+              />
             </button>
             <button onClick={() => filterManaValue(4)}>
-              <img className="symbol" src={four} alt="four mana cost" />
+              <img
+                id="four"
+                className="mana-cost symbol"
+                src={four}
+                alt="four mana cost"
+              />
             </button>
             <button onClick={() => filterManaValue(5)}>
-              <img className="symbol" src={five} alt="five mana cost" />
+              <img
+                id="five"
+                className="mana-cost symbol"
+                src={five}
+                alt="five mana cost"
+              />
             </button>
             <button onClick={() => filterManaValue(6)}>
-              <img className="symbol" src={six} alt="six mana cost" />
+              <img
+                id="six"
+                className="mana-cost symbol"
+                src={six}
+                alt="six mana cost"
+              />
             </button>
             <button onClick={() => filterManaValue(7)}>
-              <img className="symbol" src={seven} alt="seven mana cost" />
+              <img
+                id="seven"
+                className="mana-cost symbol"
+                src={seven}
+                alt="seven mana cost"
+              />
             </button>
           </div>
         </div>
         <div className="divider"></div>
         <div className="symbol-container">
           CARD TYPE
-          <div className="types">
+          <div className="card-types">
             <button onClick={() => filterType('Planeswalker')}>
               <img
-                className="planeswalker-symbol"
+                id="Planeswalker"
+                className="card-type symbol"
                 src={planeswalker}
                 alt="planeswalker symbol"
               />
             </button>
             <button onClick={() => filterType('Creature')}>
-              <img className="symbol" src={creature} alt="creature symbol" />
+              <img
+                id="Creature"
+                className="card-type symbol"
+                src={creature}
+                alt="creature symbol"
+              />
             </button>
             <button onClick={() => filterType('Instant')}>
-              <img className="symbol" src={instant} alt="instant symbol" />
+              <img
+                id="Instant"
+                className="card-type symbol"
+                src={instant}
+                alt="instant symbol"
+              />
             </button>
             <button onClick={() => filterType('Sorcery')}>
-              <img className="symbol" src={sorcery} alt="sorcery symbol" />
+              <img
+                id="Sorcery"
+                className="card-type symbol"
+                src={sorcery}
+                alt="sorcery symbol"
+              />
             </button>
             <button onClick={() => filterType('Enchantment')}>
               <img
-                className="symbol"
+                id="Enchantment"
+                className="card-type symbol"
                 src={enchantment}
                 alt="enchantment symbol"
               />
             </button>
             <button onClick={() => filterType('Artifact')}>
-              <img className="symbol" src={artifact} alt="artifact symbol" />
+              <img
+                id="Artifact"
+                className="card-type symbol"
+                src={artifact}
+                alt="artifact symbol"
+              />
             </button>
             <button onClick={() => filterType('Land')}>
-              <img className="symbol" src={land} alt="land symbol" />
+              <img
+                id="Land"
+                className="card-type symbol"
+                src={land}
+                alt="land symbol"
+              />
             </button>
           </div>
         </div>
@@ -171,22 +320,30 @@ export default function Filter({
         <div className="symbol-container">
           RARITY
           <div className="rarities">
-            <button
-              className="mythic rarity"
-              onClick={() => filterRarity('mythic')}
-            ></button>
-            <button
-              className="rare rarity"
-              onClick={() => filterRarity('rare')}
-            ></button>
-            <button
-              className="uncommon rarity"
-              onClick={() => filterRarity('uncommon')}
-            ></button>
-            <button
-              className="common rarity"
-              onClick={() => filterRarity('common')}
-            ></button>
+            <div id="mythic" className="rarity-container">
+              <button
+                className="mythic rarity"
+                onClick={() => filterRarity('mythic')}
+              ></button>
+            </div>
+            <div id="rare" className="rarity-container">
+              <button
+                className="rare rarity"
+                onClick={() => filterRarity('rare')}
+              ></button>
+            </div>
+            <div id="uncommon" className="rarity-container">
+              <button
+                className="uncommon rarity"
+                onClick={() => filterRarity('uncommon')}
+              ></button>
+            </div>
+            <div id="common" className="rarity-container">
+              <button
+                className="common rarity"
+                onClick={() => filterRarity('common')}
+              ></button>
+            </div>
           </div>
         </div>
       </div>
