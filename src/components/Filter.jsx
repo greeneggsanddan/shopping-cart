@@ -20,6 +20,7 @@ import sorcery from '../assets/sorcery.svg';
 import enchantment from '../assets/enchantment.svg';
 import artifact from '../assets/artifact.svg';
 import land from '../assets/land.svg';
+import PropTypes from 'prop-types';
 
 export default function Filter({
   color,
@@ -349,3 +350,16 @@ export default function Filter({
     </div>
   );
 }
+
+Filter.propTypes = {
+  color: PropTypes.string.isRequired,
+  setColor: PropTypes.func.isRequired,
+  manaValue: PropTypes.number.isRequired,
+  setManaValue: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+  setType: PropTypes.func.isRequired,
+  rarity: PropTypes.string.isRequired,
+  setRarity: PropTypes.func.isRequired,
+  query: PropTypes.string.isRequired,
+  setQuery: PropTypes.func.isRequired,
+};

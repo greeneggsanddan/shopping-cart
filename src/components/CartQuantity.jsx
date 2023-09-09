@@ -1,4 +1,5 @@
-import './CartQuantity.css'
+import './CartQuantity.css';
+import PropTypes from 'prop-types';
 
 export default function CartQuantity({ cart, setCart, item }) {
   function subtractItem() {
@@ -53,3 +54,9 @@ export default function CartQuantity({ cart, setCart, item }) {
     </div>
   );
 }
+
+CartQuantity.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+  item: PropTypes.object.isRequired
+};

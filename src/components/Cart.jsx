@@ -63,7 +63,7 @@ export default function Cart() {
               <col className="price-col" />
               <col className="quantity-col" />
               <col className="total-col" />
-              <col className="delete-col" />
+              <col className="remove-col" />
             </colgroup>
             <tr>
               <th>Item</th>

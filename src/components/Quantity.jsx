@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Quantity.css';
+import PropTypes from 'prop-types';
 
 export default function Quantity({ card, cart, setCart }) {
   const [quantity, setQuantity] = useState(1);
@@ -82,3 +83,9 @@ export default function Quantity({ card, cart, setCart }) {
     </form>
   );
 }
+
+Quantity.propTypes = {
+  card: PropTypes.object.isRequired,
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired
+};

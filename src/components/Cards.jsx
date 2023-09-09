@@ -1,6 +1,7 @@
 import './Cards.css';
 import Quantity from './Quantity';
 import { useLoaderData } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default function Cards({
   cart,
@@ -54,3 +55,13 @@ export default function Cards({
     </>
   );
 }
+
+Cards.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+  color: PropTypes.string.isRequired,
+  manaValue: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  rarity: PropTypes.string.isRequired,
+  query: PropTypes.string.isRequired,
+};
