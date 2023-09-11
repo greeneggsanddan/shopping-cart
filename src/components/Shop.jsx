@@ -1,8 +1,8 @@
-import Cards from './Cards';
-import './Shop.css';
-import Filter from './Filter';
-import { useOutletContext } from 'react-router-dom';
-import { useState } from 'react';
+import Cards from "./Cards";
+import "./Shop.css";
+import Filter from "./Filter";
+import { useOutletContext } from "react-router-dom";
+import { useState } from "react";
 
 export default function Shop() {
   const [cart, setCart] = useOutletContext();
@@ -10,7 +10,7 @@ export default function Shop() {
   const [manaValue, setManaValue] = useState(null);
   const [type, setType] = useState(null);
   const [rarity, setRarity] = useState(null);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   return (
     <div className="shop-container">
@@ -25,7 +25,7 @@ export default function Shop() {
         setRarity={setRarity}
         query={query}
         setQuery={setQuery}
-        />
+      />
       <Cards
         cart={cart}
         setCart={setCart}

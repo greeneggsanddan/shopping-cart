@@ -1,6 +1,6 @@
-import { useOutletContext } from 'react-router-dom';
-import CartQuantity from './CartQuantity';
-import './Cart.css';
+import { useOutletContext } from "react-router-dom";
+import CartQuantity from "./CartQuantity";
+import "./Cart.css";
 
 export default function Cart() {
   const [cart, setCart] = useOutletContext();
@@ -35,7 +35,7 @@ export default function Cart() {
             height="20"
             viewBox="0 -960 960 960"
             width="20"
-            className='remove-button'
+            className="remove-button"
           >
             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
           </svg>
@@ -46,7 +46,7 @@ export default function Cart() {
 
   const subtotal = cart.reduce(
     (total, item) => total + item.prices.usd * item.quantity,
-    0
+    0,
   );
 
   return (
@@ -79,8 +79,8 @@ export default function Cart() {
               <td></td>
               <td></td>
               <td className="subtotal-title">Subtotal:</td>
-                <td className="subtotal">${subtotal.toFixed(2)}</td>
-                <td></td>
+              <td className="subtotal">${subtotal.toFixed(2)}</td>
+              <td></td>
             </tr>
           </table>
           <button className="checkout">PROCEED TO CHECKOUT</button>

@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import './Quantity.css';
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import "./Quantity.css";
+import PropTypes from "prop-types";
 
 export default function Quantity({ card, cart, setCart }) {
   const [quantity, setQuantity] = useState(1);
@@ -10,7 +10,7 @@ export default function Quantity({ card, cart, setCart }) {
   }
 
   function addQuantity() {
-    if (quantity === '') setQuantity(1);
+    if (quantity === "") setQuantity(1);
     else if (quantity < 99) setQuantity(quantity + 1);
   }
 
@@ -19,7 +19,7 @@ export default function Quantity({ card, cart, setCart }) {
 
     // Prevents negative numbers
     if (!value) {
-      setQuantity('');
+      setQuantity("");
     } else if (value < 1) {
       setQuantity(1);
     } else {
@@ -28,7 +28,7 @@ export default function Quantity({ card, cart, setCart }) {
   }
 
   function addToCart(card) {
-    if (quantity === '') return;
+    if (quantity === "") return;
 
     // Checks if the card is already in the cart and updates the quantity
     if (cart.some((cardInCart) => cardInCart.id === card.id)) {
@@ -87,5 +87,5 @@ export default function Quantity({ card, cart, setCart }) {
 Quantity.propTypes = {
   card: PropTypes.object.isRequired,
   cart: PropTypes.array.isRequired,
-  setCart: PropTypes.func.isRequired
+  setCart: PropTypes.func.isRequired,
 };

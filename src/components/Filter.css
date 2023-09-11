@@ -20,7 +20,7 @@
   padding-left: 48px;
   font-size: 1.5rem;
   font-weight: 400;
-  background-image: url('../assets/search.svg');
+  background-image: url("../assets/search.svg");
   background-repeat: no-repeat;
   background-position: 6px center;
 }
@@ -108,7 +108,7 @@
 #Planeswalker.symbol:hover,
 .rarity-container:hover {
   border-bottom: 3px solid black;
-  transition: border-bottom .25s ease-in-out;
+  transition: border-bottom 0.25s ease-in-out;
 }
 
 .mythic.rarity {

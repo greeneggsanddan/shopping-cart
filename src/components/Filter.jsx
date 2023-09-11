@@ -1,26 +1,26 @@
-import './Filter.css';
-import white from '../assets/W.svg';
-import blue from '../assets/U.svg';
-import black from '../assets/B.svg';
-import red from '../assets/R.svg';
-import green from '../assets/G.svg';
-import colorless from '../assets/C.svg';
-import zero from '../assets/0.svg';
-import one from '../assets/1.svg';
-import two from '../assets/2.svg';
-import three from '../assets/3.svg';
-import four from '../assets/4.svg';
-import five from '../assets/5.svg';
-import six from '../assets/6.svg';
-import seven from '../assets/7.svg';
-import creature from '../assets/creature.svg';
-import planeswalker from '../assets/planeswalker.svg';
-import instant from '../assets/instant.svg';
-import sorcery from '../assets/sorcery.svg';
-import enchantment from '../assets/enchantment.svg';
-import artifact from '../assets/artifact.svg';
-import land from '../assets/land.svg';
-import PropTypes from 'prop-types';
+import "./Filter.css";
+import white from "../assets/W.svg";
+import blue from "../assets/U.svg";
+import black from "../assets/B.svg";
+import red from "../assets/R.svg";
+import green from "../assets/G.svg";
+import colorless from "../assets/C.svg";
+import zero from "../assets/0.svg";
+import one from "../assets/1.svg";
+import two from "../assets/2.svg";
+import three from "../assets/3.svg";
+import four from "../assets/4.svg";
+import five from "../assets/5.svg";
+import six from "../assets/6.svg";
+import seven from "../assets/7.svg";
+import creature from "../assets/creature.svg";
+import planeswalker from "../assets/planeswalker.svg";
+import instant from "../assets/instant.svg";
+import sorcery from "../assets/sorcery.svg";
+import enchantment from "../assets/enchantment.svg";
+import artifact from "../assets/artifact.svg";
+import land from "../assets/land.svg";
+import PropTypes from "prop-types";
 
 export default function Filter({
   color,
@@ -39,82 +39,82 @@ export default function Filter({
   }
 
   function filterColor(string) {
-    const symbols = document.querySelectorAll('.mana-color');
+    const symbols = document.querySelectorAll(".mana-color");
     const selected = document.getElementById(string);
 
-    symbols.forEach((symbol) => symbol.classList.remove('selected'));
+    symbols.forEach((symbol) => symbol.classList.remove("selected"));
 
     if (string === color) {
       setColor(null);
     } else {
-      selected.classList.add('selected');
+      selected.classList.add("selected");
       setColor(string);
     }
   }
 
   function filterManaValue(number) {
-    const symbols = document.querySelectorAll('.mana-cost');
+    const symbols = document.querySelectorAll(".mana-cost");
     const selected = document.getElementById(numberToWords(number));
 
-    symbols.forEach((symbol) => symbol.classList.remove('selected'));
+    symbols.forEach((symbol) => symbol.classList.remove("selected"));
 
     if (number === manaValue) {
       setManaValue(null);
     } else {
-      selected.classList.add('selected');
+      selected.classList.add("selected");
       setManaValue(number);
     }
   }
 
   function filterType(string) {
-    const symbols = document.querySelectorAll('.card-type');
+    const symbols = document.querySelectorAll(".card-type");
     const selected = document.getElementById(string);
 
-    symbols.forEach((symbol) => symbol.classList.remove('selected'));
+    symbols.forEach((symbol) => symbol.classList.remove("selected"));
 
     if (string === type) {
       setType(null);
     } else {
-      selected.classList.add('selected');
+      selected.classList.add("selected");
       setType(string);
     }
   }
 
   function filterRarity(string) {
-    const symbols = document.querySelectorAll('.rarity-container');
+    const symbols = document.querySelectorAll(".rarity-container");
     const selected = document.getElementById(string);
 
-    symbols.forEach((symbol) => symbol.classList.remove('selected'));
+    symbols.forEach((symbol) => symbol.classList.remove("selected"));
 
     if (string === rarity) {
       setRarity(null);
     } else {
-      selected.classList.add('selected');
+      selected.classList.add("selected");
       setRarity(string);
     }
   }
 
   function resetFilter() {
-    const selected = document.querySelectorAll('.selected');
-    selected.forEach((symbol) => symbol.classList.remove('selected'));
+    const selected = document.querySelectorAll(".selected");
+    selected.forEach((symbol) => symbol.classList.remove("selected"));
 
     setColor(null);
     setManaValue(null);
     setType(null);
     setRarity(null);
-    setQuery('');
+    setQuery("");
   }
 
   function numberToWords(number) {
     const words = [
-      'zero',
-      'one',
-      'two',
-      'three',
-      'four',
-      'five',
-      'six',
-      'seven',
+      "zero",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
     ];
     return words[number];
   }
@@ -125,7 +125,13 @@ export default function Filter({
         <label htmlFor="search-bar" hidden>
           Search Bar
         </label>
-        <input id="search-bar" value={query} onChange={handleChange} autoComplete='off' autoFocus />
+        <input
+          id="search-bar"
+          value={query}
+          onChange={handleChange}
+          autoComplete="off"
+          autoFocus
+        />
         <button className="reset" onClick={resetFilter}>
           RESET FILTERS
         </button>
@@ -134,7 +140,7 @@ export default function Filter({
         <div className="symbol-container">
           COLOR
           <div className="colors">
-            <button onClick={() => filterColor('W')}>
+            <button onClick={() => filterColor("W")}>
               <img
                 id="W"
                 className="mana-color symbol"
@@ -142,7 +148,7 @@ export default function Filter({
                 alt="white mana symbol"
               />
             </button>
-            <button onClick={() => filterColor('U')}>
+            <button onClick={() => filterColor("U")}>
               <img
                 id="U"
                 className="mana-color symbol"
@@ -150,7 +156,7 @@ export default function Filter({
                 alt="blue mana symbol"
               />
             </button>
-            <button onClick={() => filterColor('B')}>
+            <button onClick={() => filterColor("B")}>
               <img
                 id="B"
                 className="mana-color symbol"
@@ -158,7 +164,7 @@ export default function Filter({
                 alt="black mana symbol"
               />
             </button>
-            <button onClick={() => filterColor('R')}>
+            <button onClick={() => filterColor("R")}>
               <img
                 id="R"
                 className="mana-color symbol"
@@ -166,7 +172,7 @@ export default function Filter({
                 alt="red mana symbol"
               />
             </button>
-            <button onClick={() => filterColor('G')}>
+            <button onClick={() => filterColor("G")}>
               <img
                 id="G"
                 className="mana-color symbol"
@@ -174,7 +180,7 @@ export default function Filter({
                 alt="green mana symbol"
               />
             </button>
-            <button onClick={() => filterColor('C')}>
+            <button onClick={() => filterColor("C")}>
               <img
                 id="C"
                 className="mana-color symbol"
@@ -258,7 +264,7 @@ export default function Filter({
         <div className="symbol-container">
           CARD TYPE
           <div className="card-types">
-            <button onClick={() => filterType('Planeswalker')}>
+            <button onClick={() => filterType("Planeswalker")}>
               <img
                 id="Planeswalker"
                 className="card-type symbol"
@@ -266,7 +272,7 @@ export default function Filter({
                 alt="planeswalker symbol"
               />
             </button>
-            <button onClick={() => filterType('Creature')}>
+            <button onClick={() => filterType("Creature")}>
               <img
                 id="Creature"
                 className="card-type symbol"
@@ -274,7 +280,7 @@ export default function Filter({
                 alt="creature symbol"
               />
             </button>
-            <button onClick={() => filterType('Instant')}>
+            <button onClick={() => filterType("Instant")}>
               <img
                 id="Instant"
                 className="card-type symbol"
@@ -282,7 +288,7 @@ export default function Filter({
                 alt="instant symbol"
               />
             </button>
-            <button onClick={() => filterType('Sorcery')}>
+            <button onClick={() => filterType("Sorcery")}>
               <img
                 id="Sorcery"
                 className="card-type symbol"
@@ -290,7 +296,7 @@ export default function Filter({
                 alt="sorcery symbol"
               />
             </button>
-            <button onClick={() => filterType('Enchantment')}>
+            <button onClick={() => filterType("Enchantment")}>
               <img
                 id="Enchantment"
                 className="card-type symbol"
@@ -298,7 +304,7 @@ export default function Filter({
                 alt="enchantment symbol"
               />
             </button>
-            <button onClick={() => filterType('Artifact')}>
+            <button onClick={() => filterType("Artifact")}>
               <img
                 id="Artifact"
                 className="card-type symbol"
@@ -306,7 +312,7 @@ export default function Filter({
                 alt="artifact symbol"
               />
             </button>
-            <button onClick={() => filterType('Land')}>
+            <button onClick={() => filterType("Land")}>
               <img
                 id="Land"
                 className="card-type symbol"
@@ -323,25 +329,25 @@ export default function Filter({
             <div id="mythic" className="rarity-container">
               <button
                 className="mythic rarity"
-                onClick={() => filterRarity('mythic')}
+                onClick={() => filterRarity("mythic")}
               ></button>
             </div>
             <div id="rare" className="rarity-container">
               <button
                 className="rare rarity"
-                onClick={() => filterRarity('rare')}
+                onClick={() => filterRarity("rare")}
               ></button>
             </div>
             <div id="uncommon" className="rarity-container">
               <button
                 className="uncommon rarity"
-                onClick={() => filterRarity('uncommon')}
+                onClick={() => filterRarity("uncommon")}
               ></button>
             </div>
             <div id="common" className="rarity-container">
               <button
                 className="common rarity"
-                onClick={() => filterRarity('common')}
+                onClick={() => filterRarity("common")}
               ></button>
             </div>
           </div>

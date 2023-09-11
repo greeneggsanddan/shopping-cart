@@ -1,7 +1,7 @@
-import './Cards.css';
-import Quantity from './Quantity';
-import { useLoaderData } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import "./Cards.css";
+import Quantity from "./Quantity";
+import { useLoaderData } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function Cards({
   cart,
@@ -17,16 +17,16 @@ export default function Cards({
   function filterCards(data, query) {
     query = query.toLowerCase();
     return data.filter((card) =>
-      card.name.split(' ').some((word) => word.toLowerCase().startsWith(query))
+      card.name.split(" ").some((word) => word.toLowerCase().startsWith(query)),
     );
   }
 
   const filteredCards = filterCards(shopData, query);
 
   const cards = filteredCards.map((card) => {
-    const cardColors = card.colors.length === 0 ? ['C'] : card.colors;
+    const cardColors = card.colors.length === 0 ? ["C"] : card.colors;
     const cmc = card.cmc >= 7 ? 7 : card.cmc;
-    const cardTypes = card.type_line.split(' ');
+    const cardTypes = card.type_line.split(" ");
 
     // Filter logic
     if (

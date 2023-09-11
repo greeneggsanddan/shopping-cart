@@ -3,7 +3,7 @@
 }
 
 .hero {
-  background-image: url('../assets/splash.jpg');
+  background-image: url("../assets/splash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

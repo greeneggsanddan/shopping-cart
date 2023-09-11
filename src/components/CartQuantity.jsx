@@ -1,5 +1,5 @@
-import './CartQuantity.css';
-import PropTypes from 'prop-types';
+import "./CartQuantity.css";
+import PropTypes from "prop-types";
 
 export default function CartQuantity({ cart, setCart, item }) {
   function subtractItem() {
@@ -44,7 +44,7 @@ export default function CartQuantity({ cart, setCart, item }) {
 
   return (
     <div className="cart-quantity-adjuster">
-      <button className='cart-plus-minus' type="button" onClick={subtractItem}>
+      <button className="cart-plus-minus" type="button" onClick={subtractItem}>
         -
       </button>
       <div className="cart-quantity">{item.quantity}</div>
@@ -58,5 +58,5 @@ export default function CartQuantity({ cart, setCart, item }) {
 CartQuantity.propTypes = {
   cart: PropTypes.array.isRequired,
   setCart: PropTypes.func.isRequired,
-  item: PropTypes.object.isRequired
+  item: PropTypes.object.isRequired,
 };
